@@ -1,0 +1,153 @@
+:root{
+    --AirbusBlue: #5D7585;
+    --SkysBlue: #2C3E50;
+    --CrowdWhite: #D1D5DB;
+    --EICASOrange: #f59e0b;
+    --FireWARN: #ef4444;
+  /* 文字サイズや余白なども定義しておくと便利 */
+    --base-spacing: 1rem;
+}
+/************************************************************************フォントエリア********************************************************* */
+
+.shippori-mincho-b1-regular {
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jetbrains-mono-regular {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.m-plus-1p-regular {
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*************************************************************************************************************************************************/
+/*隙間マージン無効か*/
+body,html {
+  margin: 0;  /* 解決するため */
+  padding: 0; /* 入れておくと無難 */
+}
+
+body{
+    background-color: var(--AirbusBlue);
+    font-family: "Shippori Mincho B1", serif;
+
+}
+
+p{
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 2rem;
+}
+
+header{
+    background-color: var(--SkysBlue);
+    font-family: "M PLUS 1p", sans-serif;
+
+
+}
+
+.Container{
+    display: flex;
+    height: 100vh;
+}
+
+.Main-Container
+{
+    flex: 7;
+    margin-top: 2rem;
+}
+
+.Sub-Container{
+    flex: 3;
+    color: #f59e0b;
+    background-color: #111827; /* モニター内部（黒） */
+    border-radius: 8px;
+
+  /* 3層の影で「溝」を作る */
+    box-shadow: 
+    /* 1. 外側の細いハイライト（エッジを立たせる） */
+    0 1px 0 rgba(255, 255, 255, 0.5), 
+    /* 2. 内側の深い影（奥行きを出す） */
+    inset 0 4px 10px rgba(0, 0, 0, 0.8),
+    /* 3. パネルとの境界線の影 */
+    0 0 0 4px #d1d5db; 
+
+  border: 2px solid #9ca3af; /* 金属フレームの質感 */
+    padding: 15px;
+}
+
+.setup{
+    font-size: 50px;
+    text-align: center;
+}
+.punchline{
+    font-size: 50px;
+    text-align: center;
+}
+
+
+/* *******************************************************************************ボタン************************************************************ */
+button {
+  width: 100px;
+  height:100px;
+  color: white;
+  background-color: var(--FireWARN); /* ボタン本体 */
+  font-family: "JetBrains Mono", monospace;
+  font-size: larger;
+  
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  
+  /* 1. 下側に厚み（影）を作る */
+  box-shadow: 0 6px 0 #4b5563,  /* 物理的な厚み部分 */
+              0 8px 15px rgba(0,0,0,0.2); /* 地面に落とす影 */
+
+  transition: all 0.05s ease; 
+  position: relative;
+  cursor: pointer;
+}
+
+.fire-warn-button {
+
+}
+
+/* 2. 押した瞬間の変化 */
+button:active {
+  /* 厚み分だけ下に移動させる */
+  transform: translateY(6px);
+  /* 下側の厚みを消す（沈み込んだように見える） */
+  box-shadow: 0 0px 0 #4b5563,
+              0 2px 5px rgba(0,0,0,0.1);
+}
+/* *************************************************************************************************************************************************** */
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--CrowdWhite);
+}
+
+.button{
+    text-align: center;
+}
+
+.joke_area{
+    color: var(--joker-green);
+    height: 500px;
+}
+
+footer{
+    color: var(--joker-dark);
+    background-color: var(--joker-dark);
+}
