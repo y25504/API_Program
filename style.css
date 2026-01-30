@@ -1,9 +1,10 @@
 :root{
-    --AirbusBlue: #5D7585;
-    --SkysBlue: #2C3E50;
-    --CrowdWhite: #D1D5DB;
-    --EICASOrange: #f59e0b;
-    --FireWARN: #ef4444;
+    --header_background :#3c1214;
+    --header:#c4f3f0;
+    --body :#c4f3f0;
+    --joke :#3c1214;
+    --button :#3c1214;
+
   /* 文字サイズや余白なども定義しておくと便利 */
     --base-spacing: 1rem;
 }
@@ -37,19 +38,19 @@ body,html {
 }
 
 body{
-    background-color: var(--AirbusBlue);
+    background-color: var(--body);
     font-family: "Shippori Mincho B1", serif;
 
 }
 
 p{
     font-family: "JetBrains Mono", monospace;
-
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 header{
-    background-color: var(--SkysBlue);
+    background-color: var(--header_background);
+    color: var(--header);
     font-family: "M PLUS 1p", sans-serif;
 
 
@@ -63,7 +64,7 @@ header{
 .Main-Container
 {
     flex: 7;
-    margin-top: 2rem;
+    margin-top: 8rem;
 }
 
 .Sub-Container{
@@ -92,32 +93,34 @@ header{
 .punchline{
     font-size: 50px;
     text-align: center;
+    margin: 5rem;
+}
+
+.type{
+    font-size: 3rem;
+    text-align: center;
 }
 
 
 /* *******************************************************************************ボタン************************************************************ */
 button {
-  width: 100px;
-  height:100px;
+    margin-top: 5rem;
+  width: 500px;
+  height:200px;
   color: white;
-  background-color: var(--FireWARN); /* ボタン本体 */
+  background-color: var(--button); /* ボタン本体 */
   font-family: "JetBrains Mono", monospace;
-  font-size: larger;
-  
+  font-size: 5rem;
   border: 1px solid #9ca3af;
   border-radius: 4px;
   
   /* 1. 下側に厚み（影）を作る */
-  box-shadow: 0 6px 0 #4b5563,  /* 物理的な厚み部分 */
-              0 8px 15px rgba(0,0,0,0.2); /* 地面に落とす影 */
+  box-shadow: 0 6px 0 #ffffff,  /* 物理的な厚み部分 */
+              0 8px 15px rgb(255, 255, 0); /* 地面に落とす影 */
 
   transition: all 0.05s ease; 
   position: relative;
   cursor: pointer;
-}
-
-.fire-warn-button {
-
 }
 
 /* 2. 押した瞬間の変化 */
@@ -135,7 +138,7 @@ h1{
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--CrowdWhite);
+    color: var(--h1);
 }
 
 .button{
@@ -143,11 +146,11 @@ h1{
 }
 
 .joke_area{
-    color: var(--joker-green);
-    height: 500px;
+    color: var(--joke);
+    height: 300px;
 }
 
 footer{
-    color: var(--joker-dark);
-    background-color: var(--joker-dark);
+    color: var(--footer_color);
+    background-color: var(--footer_background);
 }

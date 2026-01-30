@@ -1,8 +1,11 @@
 //HTMLの要素を取得する
 const btn = document.getElementById('btn');
+
 const setupDiv = document.querySelector('.setup');
+const typeDiv = document.querySelector('.type');
 const errorDiv = document.querySelector('.error');
 const punchlineDiv = document.querySelector('.punchline');
+
 
 //ボタンクリック時の動作設定
 btn.addEventListener('click', async () => {
@@ -14,13 +17,15 @@ btn.addEventListener('click', async () => {
         // API（エンドポイント）からデータを取得
         //***************************************************************************ジョークAPI*******************************************
         const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
+        
         const data = await response.json();
         //****************************************************************************************************************************** */ */
 
         //***************************************************************************Gemini_API**************************************** */
-        
+
 
         // 取得したデータをHTMLの各クラスに表示
+        typeDiv.innerText = data.type;
         setupDiv.innerText = data.setup;
         punchlineDiv.innerText = data.punchline;
 
